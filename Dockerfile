@@ -9,7 +9,10 @@ RUN apt-get update && apt-get install -y wget --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # Установите ChromeDriver
-RUN apt-get update && apt-get install -y chromedriver
+RUN apt-get update && apt-get install -y wget --no-install-recommends \
+    && wget -O /tmp/chromedriver.zip https://chromedriver.storage.googleapis.com/93.0.4577.63/chromedriver_linux64.zip \
+    && unzip /tmp/chromedriver.zip -d /usr/bin \
+    && rm /tmp/chromedriver.zip
 
 # Установите зависимости Python
 COPY requirements.txt .
