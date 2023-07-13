@@ -14,9 +14,8 @@ options.add_argument("-headless")
 options.add_argument("--disable-dev-shm-usage")
 options.add_argument("--no-sandbox")
 
-chrome_driver_path = os.environ.get('CHROMEDRIVER_PATH', '/usr/bin/chromedriver')
-service = Service(chrome_driver_path)
-driver = webdriver.Chrome(service=service, options=options)
+chrome_driver_path = '/usr/bin/chromedriver'
+driver = webdriver.Chrome(options=options)
 
 status = 0
 
