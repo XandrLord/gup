@@ -8,6 +8,9 @@ RUN apt-get update && apt-get install -y wget --no-install-recommends \
     && apt-get update && apt-get install -y google-chrome-stable --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
+# Установите ChromeDriver
+RUN apt-get update && apt-get install -y chromium-driver
+
 # Установите зависимости Python
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
