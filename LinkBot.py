@@ -15,7 +15,8 @@ options.add_argument("--disable-dev-shm-usage")
 options.add_argument("--no-sandbox")
 
 chrome_driver_path = '/usr/bin/chromedriver'
-driver = webdriver.Chrome(executable_path=chrome_driver_path, options=options)
+service = Service(chrome_driver_path)
+driver = webdriver.Chrome(service=service, options=options)
 
 status = 0
 
