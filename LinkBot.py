@@ -1,6 +1,7 @@
 import telebot
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
 import time
 import os
 
@@ -12,7 +13,10 @@ options.binary_location = os.environ.get("/usr/bin/google-chrome-stable")
 options.add_argument("-headless")
 options.add_argument("--disable-dev-shm-usage")
 options.add_argument("--no-sandbox")
-driver = webdriver.Chrome(executable_path=os.environ.get("/usr/bin/chromedriver"), options=options)
+
+chrome_driver_path = os.environ.get('CHROMEDRIVER_PATH', '/usr/bin/chromedriver')
+service = Service(chrome_driver_path)
+driver = webdriver.Chrome(service=service, options=options)
 
 status = 0
 
