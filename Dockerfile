@@ -16,7 +16,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Укажите переменную окружения PATH
-ENV PATH="/usr/bin/chromedriver:${PATH}"
+ENV PATH="/usr/lib/chromium:${PATH}"
 
 # Скопируйте ваше приложение в контейнер
 COPY . /app
