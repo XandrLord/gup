@@ -9,14 +9,14 @@ RUN apt-get update && apt-get install -y wget --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # Установите ChromeDriver
-RUN apt-get update && apt-get install -y chromium-driver
+RUN apt-get update && apt-get install -y chromedriver
 
 # Установите зависимости Python
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Укажите переменную окружения PATH
-ENV PATH="/usr/lib/chromium:${PATH}"
+ENV PATH="/usr/bin:${PATH}"
 
 # Скопируйте ваше приложение в контейнер
 COPY . /app
