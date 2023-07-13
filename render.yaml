@@ -1,6 +1,6 @@
 version: 1
 build:
   - cmd: pip install -r requirements.txt
-  publish:
-  - root: .idea/
+start:
+  - cmd: python LinkBot.py
 
