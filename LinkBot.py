@@ -1,7 +1,6 @@
 import telebot
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from telebot import types
 import time
 import os
 
@@ -20,14 +19,7 @@ status = 0
 @bot.message_handler(commands=['start'])
 def start(message):
 
-    markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-
-    item1 = types.KeyboardButton('запуск шарманки')
-    item2 = types.KeyboardButton('закругляемся')
-
-    markup.add(item1, item2)
-
-    bot.send_message(message.chat.id, "привет, {0.first_name}\nКоманды:\n1) запуск шарманки\n2) закругляемся".format(message.from_user, bot.get_me()), reply_markup=markup)
+    bot.send_message(message.chat.id, "привет, {0.first_name}\nКоманды:\n1) запуск шарманки\n2) закругляемся".format(message.from_user, bot.get_me()))
 
 @bot.message_handler(content_types=["text"])
 def orders(message):
