@@ -17,6 +17,7 @@ options.add_argument("--no-sandbox")
 chrome_binary_location = options.binary_location
 print("Chrome binary location:", chrome_binary_location)
 
+chrome_driver_path = '/usr/bin/chromedriver'
 driver_binary_location = chrome_driver_path
 print("ChromeDriver binary location:", driver_binary_location)
 
