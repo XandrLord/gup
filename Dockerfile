@@ -15,6 +15,9 @@ RUN apt-get update && apt-get install -y chromium-driver
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Укажите переменную окружения PATH
+ENV PATH="/usr/bin/chromedriver:${PATH}"
+
 # Скопируйте ваше приложение в контейнер
 COPY . /app
 WORKDIR /app
