@@ -1,6 +1,4 @@
 version: 1
 build:
-  - cmd: pip install -r requirements.txt
-start:
-  - cmd: python LinkBot.py
-
+  - name: Dockerfile
+    context: .
